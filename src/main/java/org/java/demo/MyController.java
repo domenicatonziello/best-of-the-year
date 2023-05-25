@@ -7,9 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/")
 public class MyController {
 	
 	private List<Movie> bestMovies(){
@@ -43,19 +44,19 @@ public class MyController {
 	@GetMapping("/movies")
 	public String getMovies(Model model) {
 
-		String list = "";
+//		String list = "";
 		List<Movie> movies = bestMovies();
 
-		for(int i = 0; i<movies.size(); i++) {
-			
-			if (i < movies.size()-1) {
-				list += movies.get(i).getTitolo() + ", ";
-			} else {
-				list += movies.get(i).getTitolo() + ".";
-			}
-		}
+//		for(int i = 0; i<movies.size(); i++) {
+//			
+//			if (i < movies.size()-1) {
+//				list += movies.get(i).getTitolo() + ", ";
+//			} else {
+//				list += movies.get(i).getTitolo() + ".";
+//			}
+//		}
 
-		model.addAttribute("moviesList", list);
+		model.addAttribute("movies", movies);
 
 		return "movies";
 	}
@@ -64,19 +65,19 @@ public class MyController {
 	@GetMapping("/songs")
 	public String getSongs(Model model) {
 
-		String list = "";
+//		String list = "";
 		List<Song> songs = bestSongs();
 
-		for(int i = 0; i < songs.size(); i++) {
-			
-			if (i < songs.size()-1) {
-				list += songs.get(i).getTitolo() + ", ";
-			} else {
-				list += songs.get(i).getTitolo() + ".";
-			}
-		}
+//		for(int i = 0; i < songs.size(); i++) {
+//			
+//			if (i < songs.size()-1) {
+//				list += songs.get(i).getTitolo() + ", ";
+//			} else {
+//				list += songs.get(i).getTitolo() + ".";
+//			}
+//		}
 
-		model.addAttribute("songsList", list);
+		model.addAttribute("songs", songs);
 
 		return "songs";
 	}
@@ -86,7 +87,7 @@ public class MyController {
 		List<Movie> movies = bestMovies();
 		String movie = null;
 		
-		for(int i = 0; i<movies.size(); i++) {
+		for(int i = 0; i < movies.size(); i++) {
 			if(id == movies.get(i).getId()) {
 				movie = movies.get(i).getTitolo();
 				break;
@@ -95,7 +96,7 @@ public class MyController {
 		
 		model.addAttribute("movie", movie);
 		
-		return "moviedetails";
+		return "MovieDetail";
 	}
 	
 	@GetMapping("/songs/{id}")
@@ -113,7 +114,7 @@ public class MyController {
 		
 		model.addAttribute("song", song);
 		
-		return "songdetails";
+		return "SongDetail";
 	}
 
 }

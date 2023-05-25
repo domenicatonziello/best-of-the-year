@@ -6,6 +6,8 @@
 </head>
 <body>
 	<h1>ELENCO FILM </h1>
-	<p th:text="${moviesList}">
+	<ul th:each="movie : ${movies}">
+		<li>[[ ${movie.titolo} ]]</li>
+	</ul>
 </body>
 </html>

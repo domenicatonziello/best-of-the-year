@@ -6,6 +6,8 @@
 </head>
 <body>
 	<h1>ELENCO SONGS </h1>
-	<p th:text="${songsList}">
+	<ul th:each="song : ${songs}">
+		<li>[[ ${song.titolo} ]]</li>
+	</ul>
 </body>
 </html>

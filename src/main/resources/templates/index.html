@@ -3,8 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Best of the year</title>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}"/>
 </head>
 <body>
-	<h1 th:text="'Best of the year by ' + ${name} "> </h1>
+ 	<main class="container border my-5 p-5">
+ 		<div class="row">
+ 			<div class="col-4 p-3">
+ 				 <h5>Best of</h5>
+ 			</div>
+ 			<div class="col-6 p-3">
+	 			<th:block th:replace="frag/buttonfrag :: button('movies', 'Movies')"></th:block>
+	 			<th:block th:replace="frag/buttonfrag :: button('songs', 'Songs')"></th:block>
+ 			</div>
+ 		</div>
+		 <h1 class="text-danger text-center m-3" th:text="'Best of the year by ' + ${name} "> </h1>
+		 <div class="d-flex justify-content-center m-3">		 
+			 <img alt="logo" th:src="@{/img/java-spring.webp}" class="img-fluid" />
+		 </div>
+		 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus est tellus, consectetur eu risus non, commodo semper lacus. Maecenas sagittis arcu sit amet nulla finibus, nec suscipit ligula venenatis. Praesent egestas enim non eros cursus commodo. Curabitur lectus metus, malesuada vel posuere a, varius a quam. Ut sollicitudin luctus libero id egestas. Aenean ac erat sed dolor molestie congue eget ut mi. Phasellus id dui porttitor diam dignissim blandit. In sodales condimentum quam, eget maximus mauris scelerisque vitae. Nam accumsan venenatis dictum. In consectetur elementum justo ut vulputate. Etiam justo arcu, viverra sit amet volutpat at, iaculis ut dui. In hac habitasse platea dictumst. Quisque egestas semper tincidunt. Nulla pretium leo vitae posuere commodo. Sed risus sapien, pharetra at malesuada non, rhoncus in dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;</p>	
+   </main>
 </body>
 </html>
