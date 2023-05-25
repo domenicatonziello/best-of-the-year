@@ -12,8 +12,8 @@
  				 <h5>Best of</h5>
  			</div>
  			<div class="col-6 p-3">
-	 			<th:block th:replace="frag/buttonfrag :: button('movies', 'Movies')"></th:block>
-	 			<th:block th:replace="frag/buttonfrag :: button('songs', 'Songs')"></th:block>
+	 			<th:block th:replace="~{frag/buttonfrag :: button('movies', 'Movies')}"></th:block>
+	 			<th:block th:replace="~{frag/buttonfrag :: button('songs', 'Songs')}"></th:block>
  			</div>
  		</div>
 		 <h1 class="text-danger text-center m-3" th:text="'Best of the year by ' + ${name} "> </h1>
