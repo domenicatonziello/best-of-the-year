@@ -7,7 +7,10 @@
 <body>
 	<h1>ELENCO SONGS </h1>
 	<ul th:each="song : ${songs}">
-		<li>[[ ${song.titolo} ]]</li>
-	</ul>
+		<!-- <li>[[ ${song.titolo} ]]</li> -->
+		<li><th:block th:insert="frag/detail :: detail(${song.id}, ${song.titolo}, 'songs')"></th:block></li>
+	</ul>	
+	
+	<th:block th:replace="frag/buttonfrag :: button('/', 'Torna alla home')"></th:block>
 </body>
 </html>

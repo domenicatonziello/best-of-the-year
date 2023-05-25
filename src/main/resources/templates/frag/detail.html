@@ -1,0 +1,11 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<a
+	th:fragment="detail(id, title, category)"
+	th:href="@{/{category}/{id} (id=${id}, category=${category})}"
+	th:text="${title}"
+	>
+	</a>
+</body>
+</html>

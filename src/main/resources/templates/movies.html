@@ -7,7 +7,9 @@
 <body>
 	<h1>ELENCO FILM </h1>
 	<ul th:each="movie : ${movies}">
-		<li>[[ ${movie.titolo} ]]</li>
+		<li><th:block th:insert="frag/detail :: detail(${movie.id}, ${movie.titolo}, 'movies')"></th:block></li>
 	</ul>
+	
+	<th:block th:replace="frag/buttonfrag :: button('/', 'Torna alla home')"></th:block>
 </body>
 </html>

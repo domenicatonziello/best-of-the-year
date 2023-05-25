@@ -6,6 +6,6 @@
 </head>
 <body>
 	<h1>Film:</h1>
-	<p th:text="${movie}"></p>
+	<p th:each="movie : ${movie}"> [[ ${movie.titolo} ]]  </p>
 </body>
 </html>

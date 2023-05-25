@@ -85,11 +85,11 @@ public class MyController {
 	public String getMovieDetail(Model model, @PathVariable("id") int id) {
 		
 		List<Movie> movies = bestMovies();
-		String movie = null;
+		Movie movie = null;
 		
 		for(int i = 0; i < movies.size(); i++) {
 			if(id == movies.get(i).getId()) {
-				movie = movies.get(i).getTitolo();
+				movie = movies.get(i);
 				break;
 			}
 		}
@@ -103,11 +103,11 @@ public class MyController {
 	public String getSongDetail(Model model, @PathVariable("id") int id) {
 		
 		List<Song> songs = bestSongs();
-		String song = null;
+		Song song = null;
 		
 		for(int i = 0; i<songs.size(); i++) {
 			if(id == songs.get(i).getId()) {
-				song = songs.get(i).getTitolo();
+				song = songs.get(i);
 				break;
 			}
 		}
@@ -116,5 +116,6 @@ public class MyController {
 		
 		return "SongDetail";
 	}
+	
 
 }

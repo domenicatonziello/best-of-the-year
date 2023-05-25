@@ -6,6 +6,6 @@
 </head>
 <body>
 	<h1>Canzone:</h1>
-	<p th:text="${song}"></p>
+	<p th:each="song : ${song}"> [[ ${song.titolo} ]]  </p>
 </body>
 </html>
